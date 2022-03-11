@@ -1,0 +1,30 @@
+.qt{
+    position: relative;
+    top:4px;
+}
+.add-itm1,.Remove1{
+    padding: 1px;
+    background-color: var(--green);
+    color: white;
+    border: none;
+    width: 33px;
+    height: 35px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.item-qty1{
+    background-color: var(--green);
+    color: white;
+    width: 39px;
+    padding: 1px;
+    height: 35px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 600;
+    
+    
+}
+
+.c{
+    display: flex;
+}

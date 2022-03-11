@@ -1,0 +1,84 @@
+.icons{
+    width:14px;
+    height: 14px;
+}
+
+.besticon{
+    width:20px;
+    height: 20px;
+}
+
+.icon-container{
+    display: flex;
+    color: var(--orange);
+}
+.icon-container>div{
+    margin-right: 6px;
+}
+.sell{
+    position: relative;
+    top: -4px;
+}
+
+.bestsell{
+    display: flex;
+
+}
+
+.item-name>h1{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #5c5d61;
+    margin: 10px 0;
+}
+.item-desc> span{
+    color: #93959f;
+    line-height: 1.7rem;
+}
+.item-price>p{
+    margin-bottom: 10px;
+}
+
+.menu-contain{
+    height: 180px;
+    display: flex;
+    margin-top: 30px;
+}
+
+.foodimg{
+    width:140px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    height: 120px;
+    position: relative;
+    top: 10px;
+}
+.addbtn{
+    position: relative;
+    left: 30px;
+    bottom: 10px;
+}
+
+.add{
+    padding: 7px;
+    background-color: white;
+    color: var(--green);
+    font-size: 1.0rem;
+    font-weight: 550;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    z-index: 100;
+    border-radius: 5px;
+}
+
+.add:hover{
+    color: white;
+    background-color: var(--green);
+}
+.addbtn2{
+    position: relative;
+    bottom: 45px;
+    z-index: 1000;
+    left: 30px;
+}

@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Lato;
+    src: url(https://fonts.google.com/specimen/Lato);
+  }
+
+
+.max-width{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.display{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

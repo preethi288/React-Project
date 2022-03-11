@@ -1,0 +1,19 @@
+.items-menu{
+    margin-top: 50px;
+    display: flex;
+}
+
+.side-container{
+    width: 230px;
+}
+.main-container{
+    width: 600px;
+}
+.cart-cont{
+    width: 370px;
+}
+.line{
+    position: relative;
+    border-left:1px solid rgba(0,0,0,.1);
+    left: -30px;
+}

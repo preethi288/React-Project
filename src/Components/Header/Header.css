@@ -1,0 +1,79 @@
+.navbar{
+    box-shadow: var(--box-shadow);
+    padding: 0.7rem 0;
+    height: 80px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+  
+}
+
+.left{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    cursor: pointer;
+    margin-right: 200px;
+
+}
+
+
+.set-location{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.click-loc{
+    color: #93959f;
+}
+
+.down-arrow{
+    font-size: 1.5rem;
+}
+
+.set-location,.down-arrow{
+    position: relative;
+    top: 10px;
+}
+.click-loc{
+    position: relative;
+    top: 3px;
+}
+
+.set-location:hover,.click-loc:hover ,.down-arrow:hover{
+    color:var(--orange);
+}
+
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+
+
+}
+
+.right>div{
+    display: flex;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+}
+
+.right>div:hover{
+    color: var(--orange);
+}
+.help-outline,.signin-outline,.cart-outline{
+    padding-right: 5px;
+}
+.i{
+    width: 40px;
+    height: 40px;
+
+}

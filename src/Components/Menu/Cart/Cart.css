@@ -81,3 +81,35 @@
     position: relative;
     top:4px;
 }
+
+.subtotal{
+    margin: 30px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 400;
+}
+
+.sub{
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.tot{
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    top: 5px;
+}
+
+.m45 button{
+    width: 250px;
+    position: relative;
+    left: 80px;
+    top: 30px;
+    height: 40px;
+    background-color: var(--green);
+    color: white;
+    border: solid 1px rgba(0,0,0,.1);
+    font-size: 1.0rem;
+    font-weight: 500;
+}

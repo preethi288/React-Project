@@ -2,7 +2,6 @@ import React from 'react'
 import "../CartItems/CartItems.css"
 
 function CartItems(props) {
-    console.log("cartitem component")
     const {onRemove,onAdd,item,cartItems}=props
   return (
       

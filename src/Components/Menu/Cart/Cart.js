@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "../Cart/Cart.css"
 import cart from "../../../Images/cart.png"
 import vegicon from "../../../Images/veg-icon.png"
@@ -6,8 +6,28 @@ import nonVegicon from "../../../Images/non-veg icon.png"
 
 function Cart(props) {
     const {cartItems,onAdd,onRemove}=props
-    const {itemsprice}= cartItems.reduce((a,c)=>a+c.price*c.qty,0)
-    const {itemqty}=cartItems.reduce((a,c)=>a+c.qty,0)
+    const total=()=>{
+        var totalcount=0
+        for( var x in cartItems)
+        {
+            totalcount+=cartItems[x].qty
+
+        }
+        return totalcount
+    }
+    const subtotal=()=>{
+        var total=0
+        for(var item in cartItems)
+        {
+            total+=cartItems[item].Price*cartItems[item].qty
+        }
+        return total
+    }
+
+    const check=()=>{
+        console.log(cartItems)
+    }
+ 
 
 
     
@@ -22,11 +42,12 @@ function Cart(props) {
            <p>Good food is always cooking, go ahead and order some items from the menu.</p>
        </div>
     </div>
-    <div className="m4" style={{display:cartItems.length!=0 ? 'block':'none'}}>
+    <div className="m4" style={{display:cartItems.length!==0 ? 'block':'none'}}>
     <h1>Cart</h1>
+    <p>({total()} items)</p>
+
 
         <div className='m41'>
-        <p>{itemqty}</p>
         {
             cartItems.map((item)=>{
                 return(
@@ -55,10 +76,15 @@ function Cart(props) {
             })
             
         }
-        <div>
-            <span>Subtotal : {itemsprice}</span>
-        </div>
+        
     </div>
+    <div className='subtotal'>
+            <span className='sub'>Subtotal :</span>
+            <span className='tot'>Rs. {subtotal()}</span>
+    </div>
+    </div>
+    <div className="m45">
+        <button type="button" className="m46n" onClick={check}>CHECKOUT</button>
     </div>
     </div>
   )

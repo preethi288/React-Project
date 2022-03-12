@@ -5,7 +5,7 @@ import MainMenu from "../Menu/MainMenu/MainMenu"
 import "../ItemsMenu/Itemsmenu.css"
 import data from "../Data/ItemData"
 import menu from "../Data/MenuData"
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 
 
 function ItemsMenu() {
@@ -13,8 +13,9 @@ function ItemsMenu() {
   const {sidemenu}=data;
   const {menudata}=menu;
   const [cartItems,setcartItems]=useState([])
+
+
   const onAdd=(product)=>{
-    console.log(product)
     //To check if product already exist in cart then
     const exist=cartItems.find((x)=>x.id===product.id);
     //if product exist in cart then find that item inside cart and increase quantity of it
@@ -27,6 +28,8 @@ function ItemsMenu() {
     }
 
   }
+
+
   const onRemove=(product)=>{
     //To check if product exist in cart
     const exist=cartItems.find(x=>x.id===product.id);
@@ -40,6 +43,7 @@ function ItemsMenu() {
       setcartItems(cartItems.map(x=>x.id===product.id?{...exist,qty:exist.qty-1}:x))
     }
   }
+  
 
 
   return (

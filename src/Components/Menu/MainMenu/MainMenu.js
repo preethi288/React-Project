@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import "../MainMenu/MainMenu.css";
 import vegicon from "../../../Images/veg-icon.png";
 import nonVegicon from "../../../Images/non-veg icon.png";
@@ -9,7 +9,6 @@ import Additem from "./Additem";
 
 function MainMenu(props) {
   const {menudata,onAdd,onRemove,cartItems}=props
-  const [Bool,setBool]=useState(true)
 
   return (
     <div>
@@ -29,7 +28,7 @@ function MainMenu(props) {
                   />
                 </div>
                 <div style={{ display: item.isBestseller ? "block" : "none" }} className="bestsell">
-                  <img className="besticon" src={star} />
+                  <img className="besticon" src={star}/>
                   <span className="sell">BestSeller</span>
                 </div>
               </div>
@@ -46,7 +45,7 @@ function MainMenu(props) {
               <div className="right-menu">
               <div className="food-image">
                 <span>
-                  <img src={item.image} alt="Foodimage" className="foodimg"/>
+                  <img src={item.image} alt="Food image" className="foodimg"/>
                 </span>
               </div>
              {/* {cartItems.map(inj =>inj.id===item.id ? (inj.qty===0 ? setBool(false):setBool(true)):"Hi")} */}

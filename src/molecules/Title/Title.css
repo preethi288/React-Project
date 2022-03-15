@@ -1,0 +1,13 @@
+.a1{
+    font-weight: lighter;
+    /* margin: 10px 0; */
+    color: white;
+}
+.a2{
+    margin:10px 0;
+}
+.kitch{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}

@@ -1,5 +1,6 @@
-@import url("../src/Components/Commonfiles/CommonStyle.css");
-@import url("../src/Components/Commonfiles/CommonVariables.css");
+@import url("../src/pages/RestaurantPage/constants/CommonStyle.css");
+@import url("../src/pages/RestaurantPage/constants/CommonVariables.css");
+
 
 body {
   margin: 0;

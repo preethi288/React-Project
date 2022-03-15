@@ -1,0 +1,15 @@
+.ol1{
+    position: relative;
+    bottom: 20px;
+    left: 30px;
+}
+.ol1 .input{
+    outline: none;
+    width: 150px;
+    height: 20px;
+}
+input{
+    outline: none;
+    border: none;
+
+}

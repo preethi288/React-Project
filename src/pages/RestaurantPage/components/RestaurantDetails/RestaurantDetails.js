@@ -5,8 +5,6 @@ import IconText from '../../../../molecules/IconText/IconText';
 import "./RestaurantDetails.css"
 import TitleData from '../../services/TitleData';
 import Title from "../../../../molecules/Title/Title";
-import Search from "../../helpers/Search/Search";
-import Checkbox from '../../helpers/Checkbox/Checkbox';
 import Image from '../../../../atoms/Image/Image';
 
 function RestaurantDetails() {
@@ -36,26 +34,6 @@ function RestaurantDetails() {
                     })
 
                 }
-            </div>
-            <div className="o1g">
-                <div className="o1gg">
-                    <div className="o11">
-                        <Search/>
-                    </div>
-                    
-                </div>
-                <div className="o2gg">
-                    <div className="o11">
-                        <span className="o13">
-                            <Checkbox/>
-                        </span>
-                    </div>
-                </div>
-                <div className="o3gg">
-                    <div className="o11">
-                        <IconText text={"favourite"} icons={"fa fa-heart"}/>
-                    </div>
-                </div>
             </div>
         </div>
         <div className="offer">

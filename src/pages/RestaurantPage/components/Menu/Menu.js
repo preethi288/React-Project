@@ -38,6 +38,7 @@ function Menu() {
         setcartItems(cartItems.map(x=>x.id===product.id?{...exist,qty:exist.qty-1}:x))
       }
     }
+
   return (
     <div className='max-width items-menu'>
     <div className="side-container" >

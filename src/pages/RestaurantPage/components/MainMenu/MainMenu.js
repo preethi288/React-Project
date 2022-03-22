@@ -139,4 +139,4 @@ function MainMenu(props) {
   );
 }
 
-export default MainMenu;
+export default MainMenu

@@ -1,8 +1,31 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./Search.css";
 
 function Search(props) {
-  const { SearchItems } = props;
+  const { menudata,setmenuItems} = props;
+  const [Value, setValue] = useState("");
+
+  function SearchItems(event) {
+    var mainmenuItems = [];
+
+    setValue(event.target.value);
+    for (var x in menudata) {
+      if (menudata[x].Name.toLowerCase().indexOf(Value.toLowerCase()) !== -1) {
+        mainmenuItems.push(menudata[x]);
+      }
+    }
+    setValue(mainmenuItems);
+    if (mainmenuItems.length !== 0) {
+      setmenuItems(mainmenuItems);
+    }
+  }
+  useEffect(() => {
+    if (Value === "") {
+      setmenuItems(menudata);
+    }
+  }, [Value,setmenuItems,menudata]);
+
+
   return (
     <div className="o1gg">
 

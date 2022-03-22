@@ -1,11 +1,11 @@
 import React from "react";
 import IconText from "../../molecules/IconText/IconText";
-import Headerdata from "../../pages/RestaurantPage/services/HeaderData";
 import "./Header.css";
 import mainlogo from "../../Images/swiggy-icon.svg";
 import Image from '../../atoms/Image/Image'
 
-function Header() {
+function Header(props) {
+  const {Headerdata}=props
   return (
     <div className="navbar">
       <div className="container max-width">

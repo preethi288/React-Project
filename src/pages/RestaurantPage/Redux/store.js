@@ -1,7 +1,9 @@
-import { createStore ,compose} from 'redux'
-import rootReducer from './RootReducer'
+import { createStore ,applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import rootReducer from '../Redux/Reducer/RootReducer'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
     
 const initialStore={
     cartreducer:{
@@ -9,6 +11,9 @@ const initialStore={
 }
 }
 
-const store=createStore(rootReducer,initialStore,composeEnhancers())
+const middleware = [thunk]
+
+const store=createStore(rootReducer,initialStore,composeWithDevTools(applyMiddleware(...middleware)))
+console.log(store)
 
 export default store

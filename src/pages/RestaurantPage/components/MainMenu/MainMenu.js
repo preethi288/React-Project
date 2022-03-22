@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "./MainMenu.css";
 import { VEG_ICON } from "../../../../Images/index";
 import { NONVEG_ICON } from "../../../../Images/index";
@@ -7,62 +7,19 @@ import CartItems from "../CartItems/CartItems";
 import Additem from "./Additem";
 import Image from "../../../../atoms/Image/Image";
 import Search from "../../helpers/Search/Search";
-import { useEffect } from "react";
 import Checkbox from "../../helpers/Checkbox/Checkbox";
 import IconText from "../../../../molecules/IconText/IconText";
 
 function MainMenu(props) {
   const { menudata, onAdd, onRemove, cartItems } = props;
-
-  const [Value, setValue] = useState("");
   const [menuItems, setmenuItems] = useState(menudata);
-  const [vegChecked, setVegChecked] = useState(true);
-
-  const SearchItems = (event) => {
-    var mainmenuItems = [];
-
-    setValue(event.target.value);
-    for (var x in menudata) {
-      if (menudata[x].Name.toLowerCase().indexOf(Value.toLowerCase()) !== -1) {
-        mainmenuItems.push(menudata[x]);
-      }
-    }
-    setValue(mainmenuItems);
-    console.log(mainmenuItems);
-    if (mainmenuItems.length !== 0) {
-      setmenuItems(mainmenuItems);
-    }
-  };
-  const vegFilter = () => {
-    setVegChecked(!vegChecked);
-    let filterMainMenuItems = [];
-    if (vegChecked) {
-      for (let x in menudata) {
-        if (menudata[x].isVeg === true) {
-          filterMainMenuItems.push(menudata[x]);
-        }
-      }
-
-      setmenuItems(filterMainMenuItems);
-    } else {
-      for (let x in menudata) {
-        filterMainMenuItems.push(menudata[x]);
-      }
-      setmenuItems(filterMainMenuItems);
-    }
-  };
-
-  useEffect(() => {
-    if (Value === "") {
-      setmenuItems(menudata);
-    }
-  }, [Value,menudata]);
+  
 
   return (
     <div>
       <div className="search-container">
-        <Search SearchItems={SearchItems} />
-        <Checkbox vegFilter={vegFilter} />
+        <Search menudata={menudata} setmenuItems={setmenuItems}/>
+        <Checkbox menudata={menudata} setmenuItems={setmenuItems}/>
         <div className="fav">
           <IconText text={"favourite"} icons={"fa fa-heart"} />
         </div>

@@ -1,19 +1,17 @@
 import React from 'react';
-import food from "../../../../Images/food.jpeg";
-import OfferData from "../../services/OfferData"
+import "./RestaurantDetails.css";
 import IconText from '../../../../molecules/IconText/IconText';
-import "./RestaurantDetails.css"
-import TitleData from '../../services/TitleData';
 import Title from "../../../../molecules/Title/Title";
 import Image from '../../../../atoms/Image/Image';
 
-function RestaurantDetails() {
+function RestaurantDetails(props) {
+    const {OfferData,TitleData,foodimg}=props
   return (
     <div className="mid">
     <div className="middle max-width">
         <div className="pic">
             <div className="picture">
-                <Image className={'im'} src={food} alt={"food pic"}/>
+                <Image className={'im'} src={foodimg} alt={"food pic"}/>
             </div>
         </div>
         <div className="inf">       

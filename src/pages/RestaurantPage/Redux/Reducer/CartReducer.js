@@ -1,11 +1,7 @@
-import { ADD_ITEM} from "./CartType";
-import { REMOVE_ITEM } from "./CartType";
+import { ADD_ITEM} from "../Action/CartType";
+import { REMOVE_ITEM } from "../Action/CartType";
 
-const initialState={
-    cartItems:[]
-}
-
-const cartreducer=(state=initialState,action)=>{
+const cartreducer=(state={cartItems:[]},action)=>{
     switch (action.type) {
         case ADD_ITEM:
             const exist=state.cartItems.find((x)=>x.id===action.payload.id)

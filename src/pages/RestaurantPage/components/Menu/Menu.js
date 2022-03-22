@@ -1,42 +1,30 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import MainMenu from '../MainMenu/MainMenu'
 import Cart from '../Cart/Cart'
 import data from '../../services/Itemdata'
 import './Menu.css'
 
+import {useDispatch,useSelector} from 'react-redux'
+
 function Menu() {
 
-    const [cartItems,setcartItems]=useState([])
-  
-  
+    const dispatch=useDispatch()
+    const {cartItems}=useSelector(state=>state.cartreducer)
+
     const onAdd=(product)=>{
-      //To check if product already exist in cart then
-      const exist=cartItems.find((x)=>x.id===product.id);
-      //if product exist in cart then find that item inside cart and increase quantity of it
-      if(exist){
-        setcartItems(cartItems.map(x=> x.id===product.id ? {...exist,qty:exist.qty+1 }: x))
-      }
-      //In the else part the product does not exist in the cart, so add it to the cart
-      else{
-        setcartItems([...cartItems,{...product,qty:1}])
-      }
-  
+      dispatch({
+        type:'ADD_ITEM',
+        payload:product
+      })
+      
     }
-  
-  
+
     const onRemove=(product)=>{
-      //To check if product exist in cart
-      const exist=cartItems.find(x=>x.id===product.id);
-      //if quantity reaches to 1 and minus then filter only items with not that product id to display
-      if(exist.qty===1)
-      {
-        setcartItems(cartItems.filter(x=>x.id!==product.id))
-      }
-      //Decrease the quantity by 1
-      else{
-        setcartItems(cartItems.map(x=>x.id===product.id?{...exist,qty:exist.qty-1}:x))
-      }
+      dispatch({
+        type:'REMOVE_ITEM',
+        payload:product
+      })
     }
 
   return (

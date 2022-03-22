@@ -4,11 +4,14 @@ import cart from "../../../../Images/cart.png"
 import {VEG_ICON} from "../../../../Images/index"
 import {NONVEG_ICON} from "../../../../Images/index"
 import Image from '../../../../atoms/Image/Image'
+import {useSelector} from 'react-redux'
 
 
 
 function Cart(props) {
-    const {cartItems,onAdd,onRemove}=props
+    const {onAdd,onRemove}=props
+
+    const {cartItems}=useSelector(state=>state.cartreducer)
     const total=()=>{
         var totalcount=0
         for( var x in cartItems)

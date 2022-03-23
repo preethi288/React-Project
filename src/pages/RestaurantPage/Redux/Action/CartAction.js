@@ -1,20 +1,50 @@
 import { ADD_ITEM } from "./CartType";
 import { REMOVE_ITEM } from "./CartType";
 
-//Action Creator
+export const addItems = (product) => (dispatch, getState) => {
 
-export const addItems=(product)=>(dispatch,getState)=>{
-   dispatch({
-       type:ADD_ITEM,
-       payload:product
-   })
-   localStorage.setItem('cartItems', JSON.stringify(getState().cartreducer.cartItems))
-}
+  const cartItems = getState().cartreducer.cartItems.slice();
 
-export const removeItems=(product)=>(dispatch,getState)=>{
-    dispatch({
-        type:REMOVE_ITEM,
-        payload:product
-    })
-    localStorage.setItem('cartItems', JSON.stringify(getState().cartreducer.cartItems))
- }
+  let alreadyExist = false;
+  cartItems.forEach((x) => {
+    if (x.id === product.id) {
+      alreadyExist = true;
+      x.qty++;
+    }
+  });
+  if (!alreadyExist) {
+    cartItems.push({ ...product, qty: 1 });
+  }
+
+  dispatch({
+    type: ADD_ITEM,
+    payload: { cartItems },
+  });
+
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+};
+
+export const removeItems = (product) => (dispatch, getState) => {
+
+  let cartItems = getState().cartreducer.cartItems.slice();
+
+  cartItems.forEach((x) => {
+    if (x.id === product.id && x.qty > 1) {
+      x.qty--;
+    } 
+
+    else if (x.id===product.id && x.qty === 1) {
+      let newarr = cartItems.filter((x) => x.id !== product.id);
+      cartItems = newarr;
+    }
+
+  });
+
+  dispatch({
+    type: REMOVE_ITEM,
+    payload: { cartItems },
+  });
+
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  
+};

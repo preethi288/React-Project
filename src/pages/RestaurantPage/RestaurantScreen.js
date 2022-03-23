@@ -11,14 +11,14 @@ import food from '../../Images/food.jpeg'
 import data from './services/Itemdata'
 
 
-  function RestaurantScreen({cartItems,onAdd,onRemove}) {
-
+  function RestaurantScreen({cartItems,addItems,removeItems}) {
+    
     const restaurant={
       name:'Kitchens of Punjab',
       data:data,
       cartItems:cartItems,
-      onAdd:onAdd,
-      onRemove:onRemove
+      onAdd:addItems,
+      onRemove:removeItems
     }
 
   return (
@@ -36,12 +36,5 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps=(dispatch)=>{
-  return{
-    onAdd:(product)=>dispatch(addItems(product)),
-    onRemove:(product)=>dispatch(removeItems(product))
 
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(RestaurantScreen)
+export default connect(mapStateToProps,{addItems,removeItems})(RestaurantScreen)

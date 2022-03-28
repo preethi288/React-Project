@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/font-awesome/css/font-awesome.min.css'
-import store from '../src/pages/RestaurantPage/Redux/store'
+import store from '../src/Redux/store'
 import {Provider} from 'react-redux'
+import {BrowserRouter} from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
     <Provider store={store}>
     <App />
     </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

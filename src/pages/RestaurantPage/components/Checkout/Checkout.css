@@ -1,0 +1,35 @@
+.checkout{
+    left: 0;
+    line-height: 3rem;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    width: 100%;
+}
+
+.cartRow{
+    display: flex;
+    justify-content: center;
+}
+.cartName{
+    font-size: 1.0rem;
+    color: #5c5d61;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+.pqty{
+    font-size: 1rem;
+}
+
+.sub{
+    position: relative;
+    left: 170px;
+}
+
+.tot{
+    position: relative;
+    right: 120px;
+    top: -1px;
+}

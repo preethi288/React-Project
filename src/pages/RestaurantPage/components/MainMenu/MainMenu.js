@@ -13,7 +13,6 @@ import IconText from "../../../../molecules/IconText/IconText";
 function MainMenu(props) {
   const { menudata, onAdd, onRemove, cartItems } = props;
   const [menuItems, setmenuItems] = useState(menudata);
-  
 
   return (
     <div>

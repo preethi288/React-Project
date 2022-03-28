@@ -1,5 +1,5 @@
 import React from 'react'
-import { addItems, removeItems } from './Redux/Action/CartAction'
+import { addItems, removeItems } from '../../Redux/Action/cartAction'
 import { connect } from 'react-redux'
 import Header from '../../organisms/Header/Header'
 import RestaurantDetails from '../RestaurantPage/components/RestaurantDetails/RestaurantDetails'

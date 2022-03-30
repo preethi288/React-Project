@@ -23,13 +23,15 @@
     font-size: 1rem;
 }
 
-.sub{
+.sub1{
     position: relative;
-    left: 170px;
+    left: 240px;
+    font-size: 1.3rem;
+    color: #5c5d61;
 }
 
-.tot{
+.tot1{
     position: relative;
-    right: 120px;
-    top: -1px;
+    right: 280px;
+    top: 1px;
 }

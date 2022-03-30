@@ -6,7 +6,7 @@ import './Menu.css'
 
 function Menu(props) {
   const {restaurant}=props
-
+  
   return (
     <div className='max-width items-menu'>
     <div className="side-container" >

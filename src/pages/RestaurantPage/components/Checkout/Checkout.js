@@ -41,8 +41,8 @@ function Checkout({CartItems}) {
       })
        }
        <div className='subtotal'>
-            <span className='sub'>Subtotal :</span>
-            <span className='tot'>Rs. {subtotal()}</span>
+            <span className='sub1'>Subtotal :</span>
+            <span className='tot1'>Rs. {subtotal()}</span>
     </div>
        
        <button onClick={()=>Navigate(-1)}>Go Back</button>

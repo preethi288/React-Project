@@ -1,21 +1,23 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { addItems, removeItems } from '../../Redux/Action/cartAction'
 import { connect } from 'react-redux'
 import Header from '../../organisms/Header/Header'
 import RestaurantDetails from '../RestaurantPage/components/RestaurantDetails/RestaurantDetails'
 import Menu from '../RestaurantPage/components/Menu/Menu'
-import Headerdata from './services/HeaderData'
-import OfferData from './services/OfferData'
-import TitleData from './services/TitleData'
-import food from '../../Images/food.jpeg'
-import data from './services/Itemdata'
+import {CartContext} from './CartContext/Context'
 
 
   function RestaurantScreen({cartItems,addItems,removeItems}) {
-    
+
+    const ContextDetails=useContext(CartContext)
+  
     const restaurant={
-      name:'Kitchens of Punjab',
-      data:data,
+      name:ContextDetails.name,
+      data:ContextDetails.data,
+      OfferData:ContextDetails.OfferData,
+      TitleData:ContextDetails.TitleData,
+      Headerdata:ContextDetails.Headerdata,
+      food:ContextDetails.food,
       cartItems:cartItems,
       onAdd:addItems,
       onRemove:removeItems
@@ -23,9 +25,9 @@ import data from './services/Itemdata'
 
   return (
     <div>
-        <Header Headerdata={Headerdata}/>
-        <RestaurantDetails OfferData={OfferData} TitleData={TitleData} foodimg={food}/>
-        <Menu restaurant={restaurant}/>   
+      <Header Headerdata={restaurant.Headerdata}/>
+        <RestaurantDetails OfferData={restaurant.OfferData} TitleData={restaurant.TitleData} foodimg={restaurant.food}/>
+        <Menu restaurant={restaurant}/>  
     </div>
   )
 }

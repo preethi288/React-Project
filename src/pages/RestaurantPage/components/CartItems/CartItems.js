@@ -3,6 +3,7 @@ import "../CartItems/CartItems.css"
 
 function CartItems(props) {
     const {onRemove,onAdd,item,cartItems}=props
+    
   return (
       
     <div className='c'>

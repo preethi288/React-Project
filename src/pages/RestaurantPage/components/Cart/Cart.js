@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import "./Cart.css"
 import cart from "../../../../Images/cart.png"
 import {VEG_ICON} from "../../../../Images/index"
@@ -8,6 +9,7 @@ import Image from '../../../../atoms/Image/Image'
 
 function Cart(props) {
     const {onAdd,onRemove,cartItems}=props
+    const Navigate=useNavigate()
 
     const total=()=>{
         var totalcount=0
@@ -25,10 +27,6 @@ function Cart(props) {
             total+=cartItems[item].Price*cartItems[item].qty
         }
         return total
-    }
-
-    const check=()=>{
-        console.log(cartItems)
     }
  
 
@@ -84,7 +82,7 @@ function Cart(props) {
     </div>
     </div>
     <div className="m45">
-        <button type="button" className="m46n" onClick={check}>CHECKOUT</button>
+        <button type="button" className="m46n" onClick={()=>Navigate('thank-you')}>CHECKOUT</button>
     </div>
     </div>
   )

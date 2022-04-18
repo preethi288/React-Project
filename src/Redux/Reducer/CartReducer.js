@@ -1,5 +1,5 @@
-import { ADD_ITEM} from "../Action/CartType";
-import { REMOVE_ITEM } from "../Action/CartType";
+import { ADD_ITEM} from "../Action/ActionTypes";
+import { REMOVE_ITEM } from "../Action/ActionTypes";
 
 const cartreducer=(state = { cartItems: JSON.parse(localStorage.getItem("cartItems") || "[]")}, action)=>{
     switch (action.type) {

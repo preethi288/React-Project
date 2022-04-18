@@ -1,5 +1,5 @@
-import { ADD_ITEM } from "./CartType";
-import { REMOVE_ITEM } from "./CartType";
+import { ADD_ITEM } from "./ActionTypes";
+import { REMOVE_ITEM } from "./ActionTypes";
 
 export const addItems = (product) => (dispatch, getState) => {
 
